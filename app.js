@@ -8,14 +8,12 @@ let usersName = prompt('what is your name?');
 let greeting = document.querySelector('.greeting');
 
 let date = new Date();
-if (date.getHours() > 5 && date.getHours() < 11) {
-  greeting.innerHTML = `Good Morning ${usersName}`;
-}
-if (date.getHours() > 12 && date.getHours() < 16) {
-  greeting.innerHTML = `Good Afternoon ${usersName}`;
-}
 
-if (date.getHours() > 17 && date.getHours() < 19) {
+if (date.getHours() <= 12) {
+  greeting.innerHTML = `Good Morning ${usersName}`;
+} else if (date.getHours() <= 18) {
+  greeting.innerHTML = `Good Afternoon ${usersName}`;
+} else {
   greeting.innerHTML = `Good Evening ${usersName}`;
 }
 console.log(date);
